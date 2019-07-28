@@ -1,7 +1,6 @@
 version: "3.3"
 
 services:
-      - 8080:80
   db:
     container_name: mysql8
     image: mysql:8.0
@@ -15,7 +14,6 @@ services:
     ports:
       - 3306:3306
 
-  
   web-one:
     build:
       context: .
@@ -26,12 +24,13 @@ services:
     volumes:
       - ../web-one:/var/www/html
     ports:
+      - 8080:80
 
   web-two:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: site-2
+    container_name: php72
     depends_on:
       - db
     volumes:
