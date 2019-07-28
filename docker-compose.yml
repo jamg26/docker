@@ -24,13 +24,13 @@ services:
     volumes:
       - ../web-one:/var/www/html
     ports:
-      - 8080:80
+      - 8080:80d
 
   web-two:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: php72
+    container_name: site-2
     depends_on:
       - db
     volumes:
