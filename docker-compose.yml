@@ -24,7 +24,7 @@ services:
     volumes:
       - ../web-one:/var/www/html
     ports:
-      - 8080:80d
+      - 8080:80
 
   web-two:
     build:
